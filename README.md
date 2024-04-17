@@ -1,4 +1,4 @@
-# Website für klotzi ohne leon bloat
+# Website für klotzi ohne leon bloat (und gleichzeitig sabo projekt)
 
 # Tech Stack
 
