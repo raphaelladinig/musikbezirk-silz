@@ -1,7 +1,7 @@
 export default function Index() {
   return (
-    <div>
-      <h1>Helloworld</h1>
-    </div>
+    <nav class="flex items-center justify-between w-full border-b p-2 text-xl">
+      <div>Musikbezirk Silz</div>
+    </nav>
   );
 }
