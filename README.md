@@ -10,8 +10,9 @@
 
 # Todos
 
-- [ ] Deploy
+- [x] Basic setup
 - [ ] Basic Ui
+- [ ] Deploy
 - [ ] Connect Database
 - [ ] Functionality
 - [ ] ...

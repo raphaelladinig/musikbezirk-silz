@@ -1,7 +1,13 @@
+import Navbar from "../components/navbar";
+import { MetaProvider, Title } from "@solidjs/meta";
+
 export default function Index() {
   return (
-    <nav class="flex items-center justify-between w-full border-b p-2 text-xl">
-      <div>Musikbezirk Silz</div>
-    </nav>
+    <>
+      <MetaProvider>
+        <Title>Musikbezirk Silz</Title>
+      </MetaProvider>
+      <Navbar />
+    </>
   );
 }
