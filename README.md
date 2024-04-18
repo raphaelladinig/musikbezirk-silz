@@ -5,7 +5,7 @@
 - Bun & typescript
 - Solidjs & Solidjs start
 - tailwindcss
-- Postgres
+- sqlite3
 - Drizzle
 
 # Todos
@@ -13,6 +13,7 @@
 - [x] Basic setup
 - [x] Basic UI
 - [x] Connect to Database
+- [ ] Drizzle Studio
 - [ ] Basic Functionality
 - [ ] finish UI
 - [ ] finish Functionality
