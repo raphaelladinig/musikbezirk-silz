@@ -1,4 +1,6 @@
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import Template_1 from "../components/template_1";
 import { MetaProvider, Title } from "@solidjs/meta";
 
 export default function Index() {
@@ -8,6 +10,8 @@ export default function Index() {
         <Title>Musikbezirk Silz</Title>
       </MetaProvider>
       <Navbar />
+      <Template_1 />
+      <Footer />
     </>
   );
 }
