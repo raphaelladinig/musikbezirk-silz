@@ -11,6 +11,10 @@ export default function Index() {
       </MetaProvider>
       <Navbar />
       <Template_1 />
+      <Template_1 />
+      <Template_1 />
+      <Template_1 />
+      <Template_1 />
       <Footer />
     </>
   );
