@@ -23,6 +23,7 @@
     "node": ">=18"
   },
   "devDependencies": {
+    "bun-types": "^1.1.4",
     "drizzle-kit": "^0.20.14"
   }
 }

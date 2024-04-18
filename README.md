@@ -11,8 +11,8 @@
 # Todos
 
 - [x] Basic setup
-- [x] Basic Ui
-- [ ] Connect Database
-- [ ] Deploy
-- [ ] Functionality
-- [ ] ...
+- [x] Basic UI
+- [x] Connect to Database
+- [ ] Basic Functionality
+- [ ] finish UI
+- [ ] finish Functionality
