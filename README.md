@@ -13,7 +13,6 @@
 - [x] Basic setup
 - [x] Basic UI
 - [x] Connect to Database
-- [ ] Drizzle Studio
 - [ ] Basic Functionality
 - [ ] finish UI
 - [ ] finish Functionality

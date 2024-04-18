@@ -12,6 +12,7 @@
     "@solidjs/router": "^0.13.2",
     "@solidjs/start": "^1.0.0-rc.0",
     "autoprefixer": "^10.4.19",
+    "better-sqlite3": "^9.5.0",
     "drizzle-orm": "^0.30.8",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
