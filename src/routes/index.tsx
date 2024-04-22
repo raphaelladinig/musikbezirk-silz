@@ -1,37 +1,25 @@
 import { createResource } from "solid-js";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import { MetaProvider, Title } from "@solidjs/meta";
 import { db, schema } from "../db/index";
-import Template_1 from "../components/template_1";
-
-type Post = {
-  id: number;
-  heading: string | null;
-  body: string | null;
-};
+import { template1, Template1 } from "../components/template_1";
 
 export default function Index() {
-  const [posts, setPosts] = createResource(async () => {
-    return (await db.select().from(schema.template_1)) as Post[];
+  const [data] = createResource(async () => {
+    return (await db.select().from(schema.template_1)) as template1[];
   });
+
+  const template1Data = data();
 
   return (
     <>
-      <MetaProvider>
-        <Title>Musikbezirk Silz</Title>
-      </MetaProvider>
-      <Navbar />
       <div>
-        {posts() ? (
-          posts().map((post) => (
-            <Template_1 heading={post.heading} body={post.body} />
+        {template1Data ? (
+          template1Data.map((data) => (
+            <Template1 id={data.id} heading={data.heading} body={data.body} />
           ))
         ) : (
           <p>Loading...</p>
         )}
       </div>
-      <Footer />
     </>
   );
 }

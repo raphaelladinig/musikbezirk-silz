@@ -1,4 +1,4 @@
-# Website für klotzi ohne leon bloat (und gleichzeitig sabo projekt)
+# Website für klotzi (und gleichzeitig sabo projekt)
 
 # Tech Stack
 
@@ -14,5 +14,6 @@
 - [x] Basic UI
 - [x] Connect to Database
 - [x] Basic Functionality
-- [ ] finish UI
+- [ ] extend UI
+- [ ] add more Templates
 - [ ] finish Functionality
