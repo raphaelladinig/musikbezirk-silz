@@ -13,6 +13,6 @@
 - [x] Basic setup
 - [x] Basic UI
 - [x] Connect to Database
-- [ ] Basic Functionality
+- [x] Basic Functionality
 - [ ] finish UI
 - [ ] finish Functionality
