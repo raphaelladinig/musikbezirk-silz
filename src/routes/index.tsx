@@ -1,6 +1,6 @@
 import { createResource } from "solid-js";
 import { db, schema } from "../db/index";
-import { template1, Template1 } from "../components/template_1";
+import { template1, Template1 } from "../components/template-1";
 
 export default function Index() {
   const [data] = createResource(async () => {

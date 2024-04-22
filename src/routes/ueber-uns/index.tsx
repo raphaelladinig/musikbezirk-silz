@@ -1,5 +1,3 @@
 export default function Index() {
-  return(
-    <p>Ueber uns</p>
-  );  
+  return <p>Ueber uns</p>;
 }

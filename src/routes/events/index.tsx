@@ -1,5 +1,3 @@
 export default function Index() {
-  return(
-    <p>events</p>
-  );  
+  return <p>events</p>;
 }
