@@ -17,5 +17,6 @@
 - [x] Cleanup Code
 - [x] extend UI
 - [ ] add more Templates
+- [ ] switch to postgresql
 - [ ] finish Functionality
 - [ ] fix UI
