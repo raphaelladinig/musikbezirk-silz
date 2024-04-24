@@ -5,7 +5,7 @@
 - Bun & typescript
 - Solidjs & Solidjs start
 - tailwindcss
-- sqlite3
+- sqlite3 (soon postgresql)
 - Drizzle
 
 # Todos
@@ -18,5 +18,7 @@
 - [x] extend UI
 - [ ] add more Templates
 - [ ] switch to postgresql
+- [ ] setup user & grants
 - [ ] finish Functionality
 - [ ] fix UI
+- [ ] add examples
