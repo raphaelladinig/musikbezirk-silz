@@ -15,7 +15,11 @@ export default function App() {
       <Router
         root={(props) => (
           <Suspense>
-            <Navbar />
+            <Navbar
+              dropdowns={[
+                { title: "test", subMenus: ["events", "ueber-uns", "jugend"] },
+              ]}
+            />
             {props.children}
             <Footer />
           </Suspense>

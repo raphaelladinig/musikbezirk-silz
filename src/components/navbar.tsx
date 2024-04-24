@@ -1,14 +1,21 @@
-import Dropdow from "./dropdown";
+import Dropdown from "./dropdown";
 
-export default function Navbar() {
+export default function Navbar(props: {
+  dropdowns: { title: string; subMenus: string[] }[];
+}) {
   return (
     <nav class="flex items-center justify-between w-full border-b p-2 text-xl sticky top-0 bg-white">
-      <a href="/" class="text-2xl font-bold">
-        Musikbezirk Silz
-      </a>
       <div>
-        <Dropdow title="test" subMenus={["afs", "events"]} />
+        <a href="/" class="text-2xl font-bold">
+          Musikbezirk Silz
+        </a>
+        <p class="text-gray-400 text-xs italic">Es klingt Musik...</p>
       </div>
+      {props.dropdowns.map((item) => (
+        <div class="flex gap-2">
+          <Dropdown title={item.title} subMenus={item.subMenus} />
+        </div>
+      ))}
     </nav>
   );
 }

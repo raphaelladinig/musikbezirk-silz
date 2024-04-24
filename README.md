@@ -15,6 +15,7 @@
 - [x] Connect to Database
 - [x] Basic Functionality
 - [x] Cleanup Code
-- [ ] extend UI
+- [x] extend UI
 - [ ] add more Templates
 - [ ] finish Functionality
+- [ ] fix UI
