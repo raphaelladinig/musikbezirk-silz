@@ -18,6 +18,7 @@ export default function App() {
             <Navbar
               dropdowns={[
                 { title: "test", subMenus: ["events", "ueber-uns", "jugend"] },
+                { title: "test2", subMenus: ["events", "ueber-uns", "jugend"] },
               ]}
             />
             {props.children}
