@@ -17,8 +17,16 @@ export default function App() {
           <Suspense>
             <Navbar
               dropdowns={[
-                { title: "test", subMenus: ["events", "ueber-uns", "jugend"] },
-                { title: "test2", subMenus: ["events", "ueber-uns", "jugend"] },
+                {
+                  id: "test",
+                  title: "test",
+                  subMenus: ["events", "ueber-uns", "jugend"],
+                },
+                {
+                  id: "test2",
+                  title: "test2",
+                  subMenus: ["events", "ueber-uns", "jugend"],
+                },
               ]}
             />
             {props.children}

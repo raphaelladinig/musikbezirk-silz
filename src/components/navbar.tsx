@@ -1,7 +1,7 @@
 import Dropdown from "./dropdown";
 
 export default function Navbar(props: {
-  dropdowns: { title: string; subMenus: string[] }[];
+  dropdowns: { id: string; title: string; subMenus: string[] }[];
 }) {
   return (
     <nav class="flex items-center justify-between w-full border-b p-2 text-xl sticky top-0 bg-white">
@@ -13,7 +13,7 @@ export default function Navbar(props: {
       </div>
       {props.dropdowns.map((item) => (
         <div class="flex gap-2">
-          <Dropdown title={item.title} subMenus={item.subMenus} />
+          <Dropdown id={item.id} title={item.title} subMenus={item.subMenus} />
         </div>
       ))}
     </nav>

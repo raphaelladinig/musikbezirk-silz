@@ -1,12 +1,15 @@
 import { createEffect, createSignal, onCleanup } from "solid-js";
 
-export default function Dropdown(props: { title: string; subMenus: string[] }) {
+export default function Dropdown(props: {
+  id: string;
+  title: string;
+  subMenus: string[];
+}) {
   const [isOpen, setIsOpen] = createSignal(false);
-  const toggle = () => setIsOpen(!isOpen());
 
   createEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const dropdown = document.getElementById("dropdown");
+      const dropdown = document.getElementById(props.id);
       if (dropdown && !dropdown.contains(event.target as Node)) {
         setIsOpen(false);
       }
@@ -23,15 +26,16 @@ export default function Dropdown(props: { title: string; subMenus: string[] }) {
     });
   });
 
+  const toggle = () => setIsOpen(!isOpen());
+
   return (
-    <div id="dropdown" class="relative inline-block text-left">
-      <div>
+    <div class="relative inline-block text-left">
+      <div id={props.id}>
         <button
           onClick={toggle}
           type="button"
-          class="inline-flex w-full justify-center gap-x-1.5  bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-          id="menu-button"
-          aria-expanded="true"
+          class="inline-flex w-full justify-center gap-x-1.5 bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          aria-expanded={isOpen()}
           aria-haspopup="true"
         >
           {props.title}
@@ -54,16 +58,16 @@ export default function Dropdown(props: { title: string; subMenus: string[] }) {
           class="absolute right-0 z-10 mt-2 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
-          aria-labelledby="menu-button"
+          aria-labelledby={props.id}
           tabindex="-1"
         >
-          {props.subMenus.map((subMenu) => (
+          {props.subMenus.map((subMenu, index) => (
             <a
               href={subMenu}
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
+              tabindex={index === 0 ? "0" : "-1"}
+              id={`${props.id}-item-${index}`}
               onClick={toggle}
             >
               {subMenu}
