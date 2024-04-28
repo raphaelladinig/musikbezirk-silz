@@ -10,16 +10,14 @@ export default function Index() {
   const template1Data = data();
 
   return (
-    <>
-      <div>
-        {template1Data ? (
-          template1Data.map((data) => (
-            <Template1 id={data.id} heading={data.heading} body={data.body} />
-          ))
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-    </>
+    <div>
+      {template1Data ? (
+        template1Data.map((data) => (
+          <Template1 id={data.id} heading={data.heading} body={data.body} />
+        ))
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
   );
 }
