@@ -16,6 +16,7 @@
 - [x] Basic Functionality
 - [x] Cleanup Code
 - [x] extend UI
+- [ ] rework Frontend with DaisyUI
 - [ ] add more Templates
 - [ ] switch to postgresql
 - [ ] setup user & grants

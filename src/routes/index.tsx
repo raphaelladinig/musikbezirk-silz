@@ -13,9 +13,15 @@ export default function Index() {
   return (
     <div>
       <Template1
-        id="1"
+        id={1}
         heading="test"
         body="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+      />
+      <Template2
+        id={1}
+        heading="test"
+        body="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+        images={["examle.png", "example.png", "example.png"]}
       />
     </div>
   );
