@@ -1,4 +1,4 @@
-import Dropdown from "./dropdown";
+import Dropdown from "~/components/dropdown";
 
 export default function Navbar(props: {
   dropdowns: { id: string; title: string; subMenus: string[] }[];

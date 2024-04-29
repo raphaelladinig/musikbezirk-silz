@@ -20,5 +20,5 @@
 - [ ] switch to postgresql
 - [ ] setup user & grants
 - [ ] finish Functionality
-- [ ] fix UI
+- [ ] fix UI + Animations
 - [ ] add examples
