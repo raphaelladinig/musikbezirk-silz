@@ -12,5 +12,6 @@
 - [x] setup Project
 - [ ] UI & Templates
 - [ ] DB connection
-- [ ] functionalitu
+- [ ] functionality
+- [ ] more Templates
 - [ ] fixes
