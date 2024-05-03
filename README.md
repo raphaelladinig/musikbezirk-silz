@@ -10,8 +10,8 @@
 # ToDos
 
 - [x] setup Project
-- [ ] UI & Templates
-- [ ] DB connection
+- [x] UI & Templates
+- [x] DB connection
 - [ ] functionality
 - [ ] more Templates
 - [ ] fixes

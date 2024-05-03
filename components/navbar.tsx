@@ -6,7 +6,7 @@ export default function Navbar() {
     { title: "Events", href: "/" },
     { title: "Rückblick", href: "/" },
     { title: "Jugend", href: "/" },
-    { title: "Über Uns", href: "/-uns" },
+    { title: "Über Uns", href: "/" },
   ];
 
   return (
