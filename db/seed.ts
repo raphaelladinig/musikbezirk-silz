@@ -1,5 +1,5 @@
 import * as Schema from "./schema";
-import db from "./db";
+import db from "./drizzle";
 import { exit } from "process";
 
 await db.insert(Schema.pages).values({ title: "Start", href: "/" });

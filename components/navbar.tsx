@@ -1,13 +1,9 @@
 import { Button } from "@/components/ui/button";
+import db from "@/db/drizzle";
+import { pages } from "@/db/schema";
 
-export default function Navbar() {
-  const menus: { title: string; href: string }[] = [
-    { title: "Start", href: "/" },
-    { title: "Events", href: "/" },
-    { title: "Rückblick", href: "/" },
-    { title: "Jugend", href: "/" },
-    { title: "Über Uns", href: "/" },
-  ];
+export default async function Navbar() {
+  const menus = await db.select().from(pages);
 
   return (
     <nav className="flex items-center justify-between w-full border-b p-2 text-xl sticky top-0">
@@ -20,6 +16,7 @@ export default function Navbar() {
       <div>
         {menus.map((menu) => (
           <a
+            key={menu.id}
             className="transition-colors hover:text-foreground/80 text-foreground/60"
             href={menu.href}
           >
