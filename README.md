@@ -15,4 +15,6 @@
 - [ ] basic functionality
 - [ ] more Templates
 - [ ] fixes
+- [ ] grants
+- [ ] json import/export
 - [ ] doc
