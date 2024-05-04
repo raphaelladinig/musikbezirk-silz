@@ -4,7 +4,7 @@
 
 - Bun
 - NextJs & typescript
-- drizzle & postresql
+- drizzle & postgresql
 - tailwindcss & shadcn
 
 # ToDos
