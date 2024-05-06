@@ -14,3 +14,12 @@ export const template1 = pgTable("template1", {
   content: text("content").notNull(),
   creationDate: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`),
 });
+
+export const template2 = pgTable("template2", {
+  id: serial("id").primaryKey(),
+  pageId: integer("page_id").references(() => pages.id),
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  imgs: text("imgs").array().notNull(),
+  creationDate: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`),
+});

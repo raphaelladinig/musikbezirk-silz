@@ -12,8 +12,7 @@
 - [x] setup Project
 - [x] UI & Templates
 - [x] DB connection
-- [ ] basic functionality
-- [ ] more Templates
+- [x] basic functionality
 - [ ] fixes
 - [ ] grants
 - [ ] json import/export
