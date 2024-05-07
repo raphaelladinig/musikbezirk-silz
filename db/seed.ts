@@ -11,8 +11,12 @@ await db.insert(Schema.pages).values({ title: "Jugend", href: "/jugend" });
 await db.insert(Schema.pages).values({ title: "Über Uns", href: "/ueber-uns" });
 
 await db.insert(Schema.posts).values({
-  pageId: 1,
+  page_id: 1,
   title: "Test",
+});
+await db.insert(Schema.posts).values({
+  page_id: 2,
+  title: "Bezirksmusikfest 2024",
 });
 
 await db.insert(Schema.postContents).values({
@@ -20,6 +24,12 @@ await db.insert(Schema.postContents).values({
   type: "text",
   position: 1,
   content: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+});
+await db.insert(Schema.postContents).values({
+  post_id: 2,
+  type: "text",
+  position: 1,
+  content: "Das Bezirksmusikfest findet heuer vom 26. bis zum 28. Juli in Sölden statt. ",
 });
 
 exit(0);

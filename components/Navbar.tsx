@@ -17,7 +17,6 @@ export default async function Navbar() {
         {menus.map((menu) => (
           <a
             key={menu.id}
-            className="transition-colors hover:text-foreground/80 text-foreground/60"
             href={menu.href}
           >
             <Button variant="link">{menu.title}</Button>

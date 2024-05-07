@@ -18,6 +18,6 @@ export const postContents = pgTable("postContents", {
   id: serial("id").primaryKey(),
   post_id: integer("post_id").references(() => posts.id),
   type: text("type").notNull(),
-  position: integer("position").notNull().unique(),
+  position: integer("position").notNull(),
   content: text("content").notNull(),
 });

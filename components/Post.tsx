@@ -27,6 +27,8 @@ function renderContent(content: { type: string; content: string }) {
   switch (content.type) {
     case "text":
       return <p>{content.content}</p>;
+    case "image":
+      return <img src={content.content} />;
     default:
       return null;
   }

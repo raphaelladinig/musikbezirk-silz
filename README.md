@@ -14,7 +14,8 @@
 - [x] DB connection
 - [x] basic functionality
 - [x] rework everything
-- [ ] fixes
 - [ ] grants
 - [ ] json import/export
 - [ ] doc
+- [ ] fixes (dynamic, proper metadata)
+- [ ] extend functionality (more components)
