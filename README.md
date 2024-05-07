@@ -18,4 +18,5 @@
 - [ ] json import/export
 - [ ] doc
 - [ ] fixes (dynamic, proper metadata)
+- [ ] docker
 - [ ] extend functionality (more components)
