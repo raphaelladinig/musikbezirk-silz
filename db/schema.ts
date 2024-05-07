@@ -7,19 +7,20 @@ export const pages = pgTable("pages", {
   href: text("href").notNull(),
 });
 
-export const template1 = pgTable("template1", {
+export const posts = pgTable("posts", {
   id: serial("id").primaryKey(),
   pageId: integer("page_id").references(() => pages.id),
-  title: text("title").notNull(),
-  content: text("content").notNull(),
+  template: integer("template").references(() => templates.id),
   creationDate: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`),
 });
 
-export const template2 = pgTable("template2", {
+export const templates = pgTable("templates", {
   id: serial("id").primaryKey(),
-  pageId: integer("page_id").references(() => pages.id),
+  template1_id: integer("template1_id").references(() => template1.id),
+});
+
+export const template1 = pgTable("template1", {
+  id: serial("id").primaryKey(),
   title: text("title").notNull(),
   content: text("content").notNull(),
-  imgs: text("imgs").array().notNull(),
-  creationDate: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`),
 });

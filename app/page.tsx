@@ -1,5 +1,5 @@
-import TemplateRenderer from "@/components/templateRenderer";
+import PostContainer from "@/components/PostContainer";
 
 export default function Home() {
-  return <TemplateRenderer pageId={1} />;
+  return <PostContainer pageId={1} />;
 }
