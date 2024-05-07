@@ -13,6 +13,7 @@
 - [x] UI & Templates
 - [x] DB connection
 - [x] basic functionality
+- [x] rework everything
 - [ ] fixes
 - [ ] grants
 - [ ] json import/export

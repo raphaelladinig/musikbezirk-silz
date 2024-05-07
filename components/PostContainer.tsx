@@ -1,28 +1,18 @@
 import db from "@/db/drizzle";
-import * as Schema from "@/db/schema";
+import { posts } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { Template1 } from "./Template1";
+import Post from "@/components/Post";
 
-export default async function PostContainer(props: { pageId: number }) {
-  const posts = await db
-    .select()
-    .from(Schema.posts)
-    .fullJoin(Schema.templates, eq(Schema.posts.template, Schema.templates.id))
-    .fullJoin(
-      Schema.template1,
-      eq(Schema.templates.template1_id, Schema.template1.id),
-    )
-    .where(eq(Schema.posts.pageId, props.pageId))
-    .execute();
+export default async function PostContainer(props: { page_id: number }) {
+  const postsData = await db
+    .select({ id: posts.id, title: posts.title, creation_date: posts.creation_date })
+    .from(posts)
+    .where(eq(posts.page_id, props.page_id));
 
   return (
     <div>
-      {posts.map((post) => (
-        <Template1
-          key={post.posts?.id}
-          title={post.template1?.title}
-          content={post.template1?.content}
-        />
+      {postsData.map((post, index) => (
+        <Post key={index} post_id={post.id} title={post.title} creation_date={post.creation_date}/>
       ))}
     </div>
   );

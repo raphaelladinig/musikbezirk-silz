@@ -1,5 +1,5 @@
 import PostContainer from "@/components/PostContainer";
 
 export default function Home() {
-  return <PostContainer pageId={1} />;
+  return <PostContainer page_id={1} />;
 }

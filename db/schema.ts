@@ -9,18 +9,15 @@ export const pages = pgTable("pages", {
 
 export const posts = pgTable("posts", {
   id: serial("id").primaryKey(),
-  pageId: integer("page_id").references(() => pages.id),
-  template: integer("template").references(() => templates.id),
-  creationDate: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`),
-});
-
-export const templates = pgTable("templates", {
-  id: serial("id").primaryKey(),
-  template1_id: integer("template1_id").references(() => template1.id),
-});
-
-export const template1 = pgTable("template1", {
-  id: serial("id").primaryKey(),
+  page_id: integer("page_id").references(() => pages.id),
   title: text("title").notNull(),
+  creation_date: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`).notNull(),
+});
+
+export const postContents = pgTable("postContents", {
+  id: serial("id").primaryKey(),
+  post_id: integer("post_id").references(() => posts.id),
+  type: text("type").notNull(),
+  position: integer("position").notNull().unique(),
   content: text("content").notNull(),
 });
