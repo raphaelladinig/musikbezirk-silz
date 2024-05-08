@@ -16,6 +16,7 @@
 - [x] grants
 - [x] json import/export
 - [ ] fixes (dynamic, proper metadata)
+- [ ] post builder
 - [ ] docker
 - [ ] extend functionality (more components)
 - [ ] doc (ERM, ...)
