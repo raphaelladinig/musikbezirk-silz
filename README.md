@@ -14,8 +14,8 @@
 - [x] DB connection
 - [x] basic functionality
 - [x] grants
-- [ ] json import/export
-- [ ] doc
+- [x] json import/export
 - [ ] fixes (dynamic, proper metadata)
 - [ ] docker
 - [ ] extend functionality (more components)
+- [ ] doc (ERM, ...)
