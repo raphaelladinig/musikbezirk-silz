@@ -13,7 +13,7 @@
 - [x] UI & Templates
 - [x] DB connection
 - [x] basic functionality
-- [ ] grants
+- [x] grants
 - [ ] json import/export
 - [ ] doc
 - [ ] fixes (dynamic, proper metadata)

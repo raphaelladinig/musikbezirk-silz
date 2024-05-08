@@ -1,5 +1,5 @@
 import db from "@/db/drizzle";
-import { postContents } from "@/db/schema";
+import { post_contents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
 export default async function Post(props: {
@@ -9,9 +9,9 @@ export default async function Post(props: {
 }) {
   const postContentsData = await db
     .select()
-    .from(postContents)
-    .where(eq(postContents.post_id, props.post_id))
-    .orderBy(postContents.position);
+    .from(post_contents)
+    .where(eq(post_contents.post_id, props.post_id))
+    .orderBy(post_contents.position);
 
   return (
     <div className="m-4 p-2 bg-gray-200">

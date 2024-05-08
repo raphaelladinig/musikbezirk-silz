@@ -15,17 +15,23 @@ await db.insert(Schema.posts).values({
   title: "Test",
 });
 await db.insert(Schema.posts).values({
-  page_id: 2,
+  page_id: 1,
   title: "Bezirksmusikfest 2024",
 });
 
-await db.insert(Schema.postContents).values({
+await db.insert(Schema.post_contents).values({
   post_id: 1,
   type: "text",
   position: 1,
   content: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
 });
-await db.insert(Schema.postContents).values({
+await db.insert(Schema.post_contents).values({
+  post_id: 1,
+  type: "text",
+  position: 2,
+  content: "/imgs/example.jpg",
+});
+await db.insert(Schema.post_contents).values({
   post_id: 2,
   type: "text",
   position: 1,

@@ -14,7 +14,7 @@ export const posts = pgTable("posts", {
   creation_date: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`).notNull(),
 });
 
-export const postContents = pgTable("postContents", {
+export const post_contents = pgTable("post_contents", {
   id: serial("id").primaryKey(),
   post_id: integer("post_id").references(() => posts.id),
   type: text("type").notNull(),
