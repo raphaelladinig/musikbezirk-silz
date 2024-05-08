@@ -17,28 +17,9 @@ export async function importDataFromJsonFile(filePath: string) {
 }
 
 export async function exportDataToJsonFile(filePath: string) {
-  const pages = await db
-    .select({
-      id: Schema.pages.id,
-      title: Schema.pages.title,
-      href: Schema.pages.href,
-    })
-    .from(Schema.pages);
-  const posts = await db
-    .select({
-      id: Schema.posts.id,
-      page_id: Schema.posts.page_id,
-      title: Schema.posts.title,
-    })
-    .from(Schema.posts);
-  const postContents = await db
-    .select({
-      post_id: Schema.post_contents.post_id,
-      type: Schema.post_contents.type,
-      position: Schema.post_contents.position,
-      content: Schema.post_contents.content,
-    })
-    .from(Schema.post_contents);
+  const pages = await db.select().from(Schema.pages);
+  const posts = await db.select().from(Schema.posts);
+  const postContents = await db.select().from(Schema.post_contents);
 
   const data = {
     pages,

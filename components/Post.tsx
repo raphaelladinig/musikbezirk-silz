@@ -5,7 +5,6 @@ import { eq } from "drizzle-orm";
 export default async function Post(props: {
   title: string;
   post_id: number;
-  creation_date: Date;
 }) {
   const postContentsData = await db
     .select()

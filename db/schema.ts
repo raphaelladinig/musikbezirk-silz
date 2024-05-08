@@ -1,5 +1,4 @@
-import { sql } from "drizzle-orm";
-import { pgTable, integer, text, timestamp, serial } from "drizzle-orm/pg-core";
+import { pgTable, integer, text, serial } from "drizzle-orm/pg-core";
 
 export const pages = pgTable("pages", {
   id: serial("id").primaryKey(),
@@ -11,7 +10,6 @@ export const posts = pgTable("posts", {
   id: serial("id").primaryKey(),
   page_id: integer("page_id").references(() => pages.id),
   title: text("title").notNull(),
-  creation_date: timestamp("creation_date").default(sql`(CURRENT_TIMESTAMP)`).notNull(),
 });
 
 export const post_contents = pgTable("post_contents", {
