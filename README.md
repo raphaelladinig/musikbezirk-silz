@@ -13,9 +13,9 @@
 - [x] UI & Templates
 - [x] DB connection
 - [x] basic functionality
-- [x] rework everything
 - [ ] grants
 - [ ] json import/export
 - [ ] doc
 - [ ] fixes (dynamic, proper metadata)
+- [ ] docker
 - [ ] extend functionality (more components)
