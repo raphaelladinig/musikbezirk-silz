@@ -1,13 +1,20 @@
 # Website für klotzi und gleichzeitig sabo project
 
-# Tech Stack
+## Tech Stack
 
 - Bun
-- NextJs & typescript
+- NextJS & typescript
 - drizzle & postgresql
 - tailwindcss & shadcn
 
-# ToDos
+## Beschreibung
+
+### Hauptziele
+
+1. Website auf der verschiedene Posts dynamisch auf verschiedenen Pages von einer Datenbank gerendert werden.
+2. Möglichkeit neue Posts via Website/CLI einzufügen und json import/export.
+
+## ToDos
 
 - [x] setup Project
 - [x] UI & Templates
@@ -16,7 +23,9 @@
 - [x] grants
 - [x] json import/export
 - [ ] fixes (dynamic, proper metadata)
-- [ ] post builder
+- [ ] post builder/cli tool
 - [ ] extend functionality (more components)
 - [ ] docker
 - [ ] doc (ERM, ...)
+
+## Doc
