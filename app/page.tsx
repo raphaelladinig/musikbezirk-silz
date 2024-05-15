@@ -1,5 +1,5 @@
-import PostContainer from "@/components/PostContainer";
+// TODO autolink to start
 
 export default function Home() {
-  return <PostContainer page_id={1} />;
+  return <div>Home</div>;
 }

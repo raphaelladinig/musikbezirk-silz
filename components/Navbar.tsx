@@ -16,8 +16,7 @@ export default async function Navbar() {
       <div>
         {menus.map((menu) => (
           <a
-            key={menu.id}
-            href={menu.href}
+            href={menu.title}
           >
             <Button variant="link">{menu.title}</Button>
           </a>

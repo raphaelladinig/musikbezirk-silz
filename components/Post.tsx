@@ -2,10 +2,7 @@ import db from "@/db/drizzle";
 import { post_contents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
-export default async function Post(props: {
-  title: string;
-  post_id: number;
-}) {
+export default async function Post(props: { post_id: number }) {
   const postContentsData = await db
     .select()
     .from(post_contents)
@@ -14,7 +11,6 @@ export default async function Post(props: {
 
   return (
     <div className="m-4 p-2 bg-gray-200">
-      <h1 className="text-xl text-red-700 underline">{props.title}</h1>
       {postContentsData.map((content, index) => (
         <div key={index}>{renderContent(content)}</div>
       ))}
@@ -24,6 +20,10 @@ export default async function Post(props: {
 
 function renderContent(content: { type: string; content: string }) {
   switch (content.type) {
+    case "title":
+      return (
+        <h1 className="text-xl text-red-700 underline">{content.content}</h1>
+      );
     case "text":
       return <p>{content.content}</p>;
     case "image":

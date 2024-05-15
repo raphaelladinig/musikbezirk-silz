@@ -21,6 +21,8 @@
 - [x] grants
 - [x] json import/export
 - [ ] fixes (dynamic, proper metadata)
+- [ ] fix to many connections open
+- [ ] dummy data
 - [ ] post builder/cli tool
 - [ ] extend functionality (more components)
 - [ ] docker
