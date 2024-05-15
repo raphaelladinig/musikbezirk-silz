@@ -1,4 +1,4 @@
-# Website für klotzi und gleichzeitig sabo project
+# Website für Musikbezirksilz
 
 ## Tech Stack
 
