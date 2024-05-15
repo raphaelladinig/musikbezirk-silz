@@ -7,9 +7,7 @@
 - drizzle & postgresql
 - tailwindcss & shadcn
 
-## Beschreibung
-
-### Hauptziele
+## Hauptziele
 
 1. Website auf der verschiedene Posts dynamisch auf verschiedenen Pages von einer Datenbank gerendert werden.
 2. Möglichkeit neue Posts via Website/CLI einzufügen und json import/export.
