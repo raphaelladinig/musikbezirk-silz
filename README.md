@@ -24,7 +24,6 @@
 - [x] fix to many connections open
 - [x] dummy data
 - [ ] post builder/cli tool
-- [ ] docker
 - [ ] dynamic
 
 ## Doc
