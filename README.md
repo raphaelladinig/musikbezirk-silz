@@ -23,7 +23,7 @@
 - [x] proper Metadata 
 - [x] fix to many connections open
 - [x] dummy data
-- [ ] post builder/cli tool
+- [ ] admin panel
 - [ ] doc
 
 ## Doc
