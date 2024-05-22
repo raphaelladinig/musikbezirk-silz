@@ -20,12 +20,13 @@
 - [x] basic functionality
 - [x] grants
 - [x] json import/export
-- [ ] fixes (dynamic, proper metadata)
-- [ ] fix to many connections open
-- [ ] dummy data
+- [x] proper Metadata 
+- [x] fix to many connections open
+- [x] dummy data
 - [ ] post builder/cli tool
 - [ ] extend functionality (more components)
 - [ ] docker
 - [ ] doc (ERM, ...)
+- [ ] dynamic
 
 ## Doc

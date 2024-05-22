@@ -1,5 +1,5 @@
-// TODO autolink to start
+import { permanentRedirect } from "next/navigation";
 
 export default function Home() {
-  return <div>Home</div>;
+  permanentRedirect("/Start");
 }

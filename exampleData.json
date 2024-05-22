@@ -1,0 +1,46 @@
+{
+  "pages": [
+    {
+      "id": 1,
+      "title": "Start"
+    },
+    {
+      "id": 2,
+      "title": "Events"
+    },
+    {
+      "id": 4,
+      "title": "Jugend"
+    },
+    {
+      "id": 3,
+      "title": "Rückblick"
+    },
+    {
+      "id": 5,
+      "title": "Über uns"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "page_id": 1
+    }
+  ],
+  "postContents": [
+    {
+      "id": 1,
+      "post_id": 1,
+      "type": "title",
+      "position": 1,
+      "content": "Test"
+    },
+    {
+      "id": 2,
+      "post_id": 1,
+      "type": "text",
+      "position": 2,
+      "content": "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    }
+  ]
+}
