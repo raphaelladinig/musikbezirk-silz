@@ -33,6 +33,11 @@ export default async function Navbar() {
             <img className="h-6 w-6" src="/envelope-solid.svg" alt="GMail" />
           </a>
         </Button>
+        <Button variant="ghost" size="icon">
+          <a href="/post-builder">
+            <img className="h-6 w-6" src="/screwdriver-wrench-solid.svg" alt="GMail" />
+          </a>
+        </Button>
       </div>
     </nav>
   );

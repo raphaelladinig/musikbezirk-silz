@@ -12,21 +12,6 @@
 1. Website auf der verschiedene Posts dynamisch auf verschiedenen Pages von einer Datenbank gerendert werden.
 2. Möglichkeit neue Posts via Website einzufügen und json import/export.
 
-## ToDos
-
-- [x] setup Project
-- [x] UI & Templates
-- [x] DB connection
-- [x] basic functionality
-- [x] grants
-- [x] json import/export
-- [x] proper Metadata 
-- [x] fix to many connections open
-- [x] dummy data
-- [ ] admin panel
-- [x] doc
-- [x] css fixes
-
 ## Doc
 
 ### Projekstruktur
