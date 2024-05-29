@@ -95,10 +95,6 @@ export default function PostBuilder() {
           Submit
         </Button>
       </div>
-      <div className="flex gap-3 mt-2">
-        <Button>Export DB</Button>
-        <Button>Import DB</Button>
-      </div>
     </div>
   );
 }
