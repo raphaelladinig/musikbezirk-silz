@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"; import {
+import { useEffect, useState } from "react";
+import {
   Select,
   SelectContent,
   SelectGroup,
@@ -10,13 +11,17 @@ import { useEffect, useState } from "react"; import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { fetchPages, insertPost } from "@/db/actions";
+import { fetchPages, insertPost, insertPostContents } from "@/db/actions";
 
 export default function PostBuilder() {
   const [pagesData, setPagesData] = useState<
     Array<{ title: string; id: number }>
   >([]);
   const [selectedPage, setSelectedPage] = useState<string | null>(null);
+  const [postId, setPostId] = useState("");
+  const [position, setPosition] = useState("");
+  const [type, setType] = useState("");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,16 +53,47 @@ export default function PostBuilder() {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Button onClick={() => selectedPage && insertPost({ page_id: Number(selectedPage) })}>
+        <Button
+          onClick={() =>
+            selectedPage && insertPost({ page_id: Number(selectedPage) })
+          }
+        >
           Create Post
         </Button>
       </div>
       <div className="flex gap-3 mt-2">
-        <Input type="label" placeholder="post_id" />
-        <Input type="label" placeholder="position" />
-        <Input type="label" placeholder="type" />
-        <Input type="label" placeholder="content" />
-        <Button>Submit</Button>
+        <Input
+          type="label"
+          placeholder="post_id"
+          onChange={(e) => setPostId(e.target.value)}
+        />
+        <Input
+          type="label"
+          placeholder="position"
+          onChange={(e) => setPosition(e.target.value)}
+        />
+        <Input
+          type="label"
+          placeholder="type"
+          onChange={(e) => setType(e.target.value)}
+        />
+        <Input
+          type="label"
+          placeholder="content"
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <Button
+          onClick={() =>
+            insertPostContents({
+              post_id: Number(postId),
+              position: Number(position),
+              type,
+              content,
+            })
+          }
+        >
+          Submit
+        </Button>
       </div>
       <div className="flex gap-3 mt-2">
         <Button>Export DB</Button>
