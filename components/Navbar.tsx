@@ -34,7 +34,7 @@ export default async function Navbar() {
           </a>
         </Button>
         <Button variant="ghost" size="icon">
-          <a href="/post-builder">
+          <a href="/PostBuilder">
             <img className="h-6 w-6" src="/screwdriver-wrench-solid.svg" alt="GMail" />
           </a>
         </Button>
