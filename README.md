@@ -25,7 +25,7 @@
 - [x] dummy data
 - [ ] admin panel
 - [x] doc
-- [ ] css fixes
+- [x] css fixes
 
 ## Doc
 
