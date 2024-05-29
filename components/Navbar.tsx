@@ -11,8 +11,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchPages();
-      setPagesData(data);
+      const data = await fetchPages(); setPagesData(data);
     };
 
     fetchData();
@@ -45,7 +44,7 @@ export default function Navbar() {
           </a>
         </Button>
         <Button variant="ghost" size="icon">
-          <a href="/PostBuilder">
+          <a href="/editor">
             <img
               className="h-6 w-6"
               src="/screwdriver-wrench-solid.svg"

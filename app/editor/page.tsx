@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import {
   Select,
   SelectContent,
@@ -18,6 +17,7 @@ export default function PostBuilder() {
   const [pagesData, setPagesData] = useState<
     Array<{ title: string; id: number }>
   >([]);
+  const [selectedPage, setSelectedPage] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,14 +45,20 @@ export default function PostBuilder() {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Button onClick={() => insertPost({})}>Create Post</Button>
+        <Button onClick={() => insertPost({ page_id: selectedPage })}>
+          Create Post
+        </Button>
       </div>
       <div className="flex gap-3 mt-2">
         <Input type="label" placeholder="post_id" />
         <Input type="label" placeholder="position" />
         <Input type="label" placeholder="type" />
         <Input type="label" placeholder="content" />
-        <Button onClick={() => insertPostContents({})}>Submit</Button>
+        <Button>Submit</Button>
+      </div>
+      <div className="flex gap-3 mt-2">
+        <Button>Export DB</Button>
+        <Button>Import DB</Button>
       </div>
     </div>
   );
