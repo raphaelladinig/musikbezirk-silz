@@ -1,13 +1,19 @@
-import db from "@/db/drizzle";
-import { pages, posts } from "@/db/schema";
-import { eq } from "drizzle-orm";
-import Post from "@/components/Post";
+"use client"
 
-export default async function PostContainer(props: { page_title: string }) {
-  const postsData = await db
-    .select({ id: posts.id })
-    .from(posts)
-    .where(eq(posts.page_id, db.select({ id: pages.id }).from(pages).where(eq(pages.title, props.page_title))));
+import Post from "@/components/Post";
+import { fetchPosts } from "@/db/actions";
+import { useEffect, useState } from "react";
+
+export default function PostContainer(props: { page_title: string }) {
+  const [postsData, setPostsData] = useState<Array<{ id: number }>>([]);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setPostsData(await fetchPosts(props.page_title));
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>

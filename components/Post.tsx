@@ -1,13 +1,18 @@
-import db from "@/db/drizzle";
-import { post_contents } from "@/db/schema";
-import { eq } from "drizzle-orm";
+"use client";
 
-export default async function Post(props: { post_id: number }) {
-  const postContentsData = await db
-    .select()
-    .from(post_contents)
-    .where(eq(post_contents.post_id, props.post_id))
-    .orderBy(post_contents.position);
+import { fetchPostContents } from "@/db/actions";
+import { useEffect, useState } from "react";
+
+export default function Post(props: { post_id: number }) {
+  const [postContentsData, setPostContentsData] = useState<Array<{ type: string; content: string }>>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setPostContentsData(await fetchPostContents(props.post_id));
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <div className="m-4 p-2 bg-gray-200">

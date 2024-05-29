@@ -1,9 +1,22 @@
-import { Button } from "@/components/ui/button";
-import db from "@/db/drizzle";
-import { pages } from "@/db/schema";
+"use client";
 
-export default async function Navbar() {
-  const menus = await db.select().from(pages);
+import { Button } from "@/components/ui/button";
+import { fetchPages } from "@/db/actions";
+import { useEffect, useState } from "react";
+
+export default function Navbar() {
+  const [pagesData, setPagesData] = useState<
+    Array<{ title: string; id: number }>
+  >([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchPages();
+      setPagesData(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <nav className="flex items-center justify-between w-full border-b p-2 text-xl top-0 bg-white">
@@ -14,11 +27,9 @@ export default async function Navbar() {
         <p className="text-gray-400 text-xs italic">Es klingt Musik...</p>
       </div>
       <div>
-        {menus.map((menu) => (
-          <a
-            href={menu.title}
-          >
-            <Button variant="link">{menu.title}</Button>
+        {pagesData.map((page) => (
+          <a href={page.title}>
+            <Button variant="link">{page.title}</Button>
           </a>
         ))}
       </div>
@@ -35,7 +46,11 @@ export default async function Navbar() {
         </Button>
         <Button variant="ghost" size="icon">
           <a href="/PostBuilder">
-            <img className="h-6 w-6" src="/screwdriver-wrench-solid.svg" alt="GMail" />
+            <img
+              className="h-6 w-6"
+              src="/screwdriver-wrench-solid.svg"
+              alt="GMail"
+            />
           </a>
         </Button>
       </div>

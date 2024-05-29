@@ -1,4 +1,6 @@
-import * as React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 
 import {
   Select,
@@ -8,16 +10,27 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import db from "@/db/drizzle";
-import { pages } from "@/db/schema";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { fetchPages, insertPost, insertPostContents } from "@/db/actions";
 
-export default async function PostBuilder() {
-  const pagesData = await db.select({ title: pages.title }).from(pages);
+export default function PostBuilder() {
+  const [pagesData, setPagesData] = useState<
+    Array<{ title: string; id: number }>
+  >([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchPages();
+      setPagesData(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="m-4">
-      <div className="flex gap-3 justify-between">
+      <div className="flex gap-3">
         <Select>
           <SelectTrigger className="w-[150px]">
             <SelectValue placeholder="Select a page" />
@@ -32,13 +45,14 @@ export default async function PostBuilder() {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Button>Create Post</Button>
+        <Button onClick={() => insertPost({})}>Create Post</Button>
       </div>
-      <div className="flex mt-2">
-        <div className="border m-1 p-2 w-1/4">
-          <h3>Components</h3>
-        </div>
-        <div className="border m-1 p-2 w-3/4">Drag and drop dingens</div>
+      <div className="flex gap-3 mt-2">
+        <Input type="label" placeholder="post_id" />
+        <Input type="label" placeholder="position" />
+        <Input type="label" placeholder="type" />
+        <Input type="label" placeholder="content" />
+        <Button onClick={() => insertPostContents({})}>Submit</Button>
       </div>
     </div>
   );
