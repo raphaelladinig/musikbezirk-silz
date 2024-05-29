@@ -1,7 +1,6 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import {
+import { useEffect, useState } from "react"; import {
   Select,
   SelectContent,
   SelectGroup,
@@ -11,13 +10,13 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { fetchPages, insertPost, insertPostContents } from "@/db/actions";
+import { fetchPages, insertPost } from "@/db/actions";
 
 export default function PostBuilder() {
   const [pagesData, setPagesData] = useState<
     Array<{ title: string; id: number }>
   >([]);
-  const [selectedPage, setSelectedPage] = useState<number | null>(null);
+  const [selectedPage, setSelectedPage] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,24 +27,28 @@ export default function PostBuilder() {
     fetchData();
   }, []);
 
+  const handleSelect = (value: string) => {
+    setSelectedPage(value);
+  };
+
   return (
     <div className="m-4">
       <div className="flex gap-3">
-        <Select>
+        <Select onValueChange={handleSelect}>
           <SelectTrigger className="w-[150px]">
             <SelectValue placeholder="Select a page" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               {pagesData.map((page, index) => (
-                <SelectItem key={index} value={page.title}>
+                <SelectItem key={index} value={page.id.toString()}>
                   {page.title}
                 </SelectItem>
               ))}
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Button onClick={() => insertPost({ page_id: selectedPage })}>
+        <Button onClick={() => selectedPage && insertPost({ page_id: Number(selectedPage) })}>
           Create Post
         </Button>
       </div>
